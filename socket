@@ -1,0 +1,34 @@
+Import socket
+Sock=socket.socket()
+host=“127.0.0.1”
+port=9090
+Sock.bind((host,port))
+Sock.listen(1)
+print(“ip address”,host)
+print(“waiting for client)
+
+fileadd=“file path”
+file=open(fileadd,’rb’)
+Filedata=file.read(1024)
+
+Conn,address =sock.accept()
+print(“connection established”)
+
+Conn.send(filedata)
+Print (“file sent”)
+Sock close 
+
+
+Import socket
+sock=socket.socket()
+host=input(str(“enter host name”))
+port=9090
+Sock.connect((host, port))
+print(“connection established”)
+
+fileadd=input(str(“file path”))
+file=open(fileadd,’wb’)
+Filedat= sock.recv(1024)
+File.write(filedat)
+File.close()
+print(“file received”)
